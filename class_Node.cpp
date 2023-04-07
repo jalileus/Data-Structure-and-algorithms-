@@ -2,62 +2,70 @@
 
 struct Node {
   char item;
-  struct Node *next;
+  struct Node *Next;
   Node(char item) {
     this->item = item;
-    next = 0;
+    Next = nullptr;
   }
 };
 
-class linked_list {
-  Node *head;
+class Linked_List {
+  Node *Head;
 
 public:
-  linked_list(std::string data) {
-    head = NULL;
+  Linked_List(std::string data) {
+    Head = nullptr;
+
     for (int i = 0; i < data.length(); i++) {
       Node *New = new Node(data[i]);
 
-      if (head == 0) {
-        head = New;
+      if (Head == nullptr) {
+        Head = New;
       } else {
-        Node *last = head;
-        while (last->next != 0)
-          last = last->next;
-        last->next = New;
+        Node *Last = Head;
+        while (Last->Next != nullptr)
+          Last = Last->Next;
+        Last->Next = New;
       }
     }
   }
 
-  ~linked_list() {}
+  ~Linked_List() {
+    Node *CURRENT = Head;
+    while (CURRENT != nullptr) {
+      Node *Temp = CURRENT;
+      CURRENT = CURRENT->Next;
+      delete Temp;
+    }
+  }
 
   void Reversed() {
-    Node *current = head;
-    Node *next = 0;
-    Node *previous = 0;
+    Node *Current = Head;
+    Node *Next = nullptr;
+    Node *Previous = nullptr;
 
-    while (current != 0) {
-      next = current->next;
-      current->next = previous;
-      previous = current;
-      current = next;
+    while (Current != nullptr) {
+      Next = Current->Next;
+      Current->Next = Previous;
+      Previous = Current;
+      Current = Next;
     }
-    head = previous;
+    Head = Previous;
   }
   void Print() {
-    struct Node *New = head;
-    while (New != 0) {
+    struct Node *New = Head;
+    while (New != nullptr) {
       std::cout << New->item;
-      New = New->next;
+      New = New->Next;
     }
   }
 };
 int main() {
   std::string data;
   std::getline(std::cin, data);
-  linked_list list(data);
-  list.Reversed();
-  list.Print();
+  Linked_List List(data);
+  List.Reversed();
+  List.Print();
 
   return 0;
 }
