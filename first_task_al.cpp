@@ -1,17 +1,17 @@
 #include <iostream>
 
 int main() {
-  unsigned long long int Number_;
-  unsigned long long int rev = 0;
+  unsigned long long int Number;
+  unsigned long long int Reverse = 0;
 
-  std::cin >> Number_;
+  std::cin >> Number;
 
-  for (; Number_ != 0;) {
-    rev = (rev * 10) + (Number_ % 10);
-    Number_ = Number_ / 10;
+  for (; Number != 0;) {
+    Reverse = (Reverse * 10) + (Number % 10);
+    Number = Number / 10;
   }
 
-  std::cout << rev;
+  std::cout << Reverse;
 
   return 0;
 }
