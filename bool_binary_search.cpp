@@ -42,5 +42,7 @@ int main() {
     frequency = frequency - 1;
   }
 
+  delete[] array;
+
   return 0;
 }
