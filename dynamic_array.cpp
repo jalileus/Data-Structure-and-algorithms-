@@ -1,132 +1,127 @@
 #include <iostream>
-using namespace std;
 
-template <class T> class Array {
+template <class T> class Vector {
 public:
-  Array();
-  Array(size_t CAPACITY);
-  ~Array();
+  Vector();
+  ~Vector();
 
-  void push_back(T element);
+  void PushBack(T Data);
+  void PopBack();
   void clear();
   void finish();
-  string resize(size_t new_capacity);
+  void resize(size_t new_capacity);
   size_t get_capacity() const;
   size_t get_size() const;
-  void pop_back();
-  void get_at(size_t index);
+  T GetAt(size_t index_);
 
 private:
-  T *arr;
-  size_t size;
-  size_t capacity;
+  T *Array;
+  size_t size_;
+  size_t capacity_;
 };
 
-template <class T> Array<T>::Array() {
-  arr = new T[1];
-  capacity = 1;
-  size = 0;
+template <class T> Vector<T>::Vector() {
+  capacity_ = 1;
+  Array = new T[capacity_];
+  size_ = 0;
 };
 
-template <class T> Array<T>::Array(size_t CAPACITY) {
-  arr = new T[CAPACITY];
-  capacity = CAPACITY;
-  size = 0;
-}
+template <class T> Vector<T>::~Vector() { delete[] Array; }
 
-template <class T> Array<T>::~Array() { delete[] arr; }
-
-template <class T> string Array<T>::resize(size_t new_capacity) {
-  while (size > new_capacity) {
-    size--;
+template <class T> void Vector<T>::resize(size_t new_capacity) {
+  while (size_ > new_capacity) {
+    size_ -= 1;
   }
-
   T *temp = new T[new_capacity];
-  for (size_t i = 0; i < size; i++) {
-    temp[i] = arr[i];
+  for (size_t i_ = 0; i_ < size_; i_++) {
+    temp[i_] = Array[i_];
   }
-  delete[] arr;
-  arr = temp;
-  capacity = new_capacity;
-  const string array = "ok";
-  return array;
+  delete[] Array;
+  Array = temp;
+  capacity_ = new_capacity;
 }
 
-template <class T> void Array<T>::push_back(T element) {
-  if (size == capacity) {
-    capacity *= 2;
-    resize(capacity);
+template <class T> void Vector<T>::PushBack(T ELEMENT) {
+  if (size_ == capacity_) {
+    capacity_ *= 2;
+    resize(capacity_);
   }
-  arr[size] = element;
-  size++;
-  cout << "ok" << endl;
+  Array[size_] = ELEMENT;
+  size_ += 1;
 }
 
-template <class T> void Array<T>::pop_back() {
-  if (size == 0) {
-    cout << "error" << endl;
+template <class T> void Vector<T>::PopBack() {
+  if (size_ == 0) {
+    throw("error");
   }
-  cout << arr[--size] << endl;
-  if (size <= capacity / 2) {
-    capacity = capacity / 2;
-    resize(capacity);
+  size_ -= 1;
+  std::cout << Array[size_] << std::endl;
+  if (size_ = capacity_ / 2) {
+    capacity_ = capacity_ / 2;
+    resize(capacity_);
   }
 }
 
-template <class T> void Array<T>::get_at(size_t index) {
-  if (index >= size || index < 0) {
-    cout << "error" << endl;
+template <class T> T Vector<T>::GetAt(size_t index_) {
+  if (index_ >= size_ || index_ < 0) {
+    throw("error");
   } else
-    cout << arr[index] << endl;
+    return Array[index_];
 }
 
-template <class T> size_t Array<T>::get_size() const { return size; }
+template <class T> size_t Vector<T>::get_size() const { return size_; }
 
-template <class T> size_t Array<T>::get_capacity() const { return capacity; }
+template <class T> size_t Vector<T>::get_capacity() const { return capacity_; }
 
-template <class T> void Array<T>::clear() {
-  resize(1);
-  cout << "ok" << endl;
-}
+template <class T> void Vector<T>::clear() { resize(1); }
 
-template <class T> void Array<T>::finish() {
-  cout << "bye" << endl;
-  exit(0);
-}
+template <class T> void Vector<T>::finish() { exit(0); }
 
 int main() {
-  Array<int> array;
+  Vector<int> arr;
   int value;
-  string input;
+  std::string input;
   int counter = 1;
   while (counter != 0) {
-    cin >> input;
+    std::cin >> input;
     if (input == "exit") {
-      array.finish();
+      std::cout << "bye" << std::endl;
+      arr.finish();
       counter = 0;
     }
     if (input == "push") {
-      cin >> value;
-      array.push_back(value);
+      std::cin >> value;
+      arr.PushBack(value);
+      std::cout << "ok" << std::endl;
     }
     if (input == "pop") {
-      array.pop_back();
+      try {
+        arr.PopBack();
+      } catch (const char *output2) {
+        std::cout << output2 << std::endl;
+      }
     }
     if (input == "capacity") {
-      cout << array.get_capacity() << endl;
+      std::cout << arr.get_capacity() << std::endl;
     }
     if (input == "size") {
-      cout << array.get_size() << endl;
+      std::cout << arr.get_size() << std::endl;
     }
     if (input == "at") {
-      cin >> value;
-      array.get_at(value);
+      std::cin >> value;
+      try {
+        std::cout << arr.GetAt(value) << std::endl;
+      } catch (const char *output3) {
+        std::cout << output3 << std::endl;
+      }
     }
     if (input == "resize") {
-      cout << array.resize(2) << endl;
+      arr.resize(2);
+      std::cout << "ok" << std::endl;
     }
     if (input == "clear") {
-      array.clear();
+      arr.clear();
+      std::cout << "ok" << std::endl;
     }
   }
 }
