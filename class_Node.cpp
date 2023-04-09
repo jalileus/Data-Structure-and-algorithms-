@@ -1,71 +1,69 @@
 #include <iostream>
+#include <string>
 
 struct Node {
   char item;
-  struct Node *Next;
+  struct Node *next;
   Node(char item) {
     this->item = item;
-    Next = nullptr;
+    next = nullptr;
   }
 };
 
-class Linked_List {
-  Node *Head;
+class List {
+  Node *head;
 
-public:
-  Linked_List(std::string data) {
-    Head = nullptr;
-
+ public:
+  List(std::string data) {
+    head = nullptr;
     for (int i = 0; i < data.length(); i++) {
-      Node *New = new Node(data[i]);
+      Node *new_node = new Node(data[i]);
 
-      if (Head == nullptr) {
-        Head = New;
+      if (head == nullptr) {
+        head = new_node;
       } else {
-        Node *Last = Head;
-        while (Last->Next != nullptr)
-          Last = Last->Next;
-        Last->Next = New;
+        Node *last = head;
+        while (last->next != nullptr) last = last->next;
+        last->next = new_node;
       }
     }
   }
 
-  ~Linked_List() {
-    Node *CURRENT = Head;
-    while (CURRENT != nullptr) {
-      Node *Temp = CURRENT;
-      CURRENT = CURRENT->Next;
-      delete Temp;
+  ~List() {
+    Node *current = head;
+    while (current != nullptr) {
+      Node *temp = current;
+      current = current->next;
+      delete temp;
     }
   }
+  void Reverse() {
+    Node *current = head;
+    Node *next = nullptr;
+    Node *previous = nullptr;
 
-  void Reversed() {
-    Node *Current = Head;
-    Node *Next = nullptr;
-    Node *Previous = nullptr;
-
-    while (Current != nullptr) {
-      Next = Current->Next;
-      Current->Next = Previous;
-      Previous = Current;
-      Current = Next;
+    while (current != nullptr) {
+      next = current->next;
+      current->next = previous;
+      previous = current;
+      current = next;
     }
-    Head = Previous;
+    head = previous;
   }
   void Print() {
-    struct Node *New = Head;
-    while (New != nullptr) {
-      std::cout << New->item;
-      New = New->Next;
+    struct Node *new_node = head;
+    while (new_node != nullptr) {
+      std::cout << new_node->item;
+      new_node = new_node->next;
     }
   }
 };
 int main() {
-  std::string data;
-  std::getline(std::cin, data);
-  Linked_List List(data);
-  List.Reversed();
-  List.Print();
+  std::string input;
+  std::getline(std::cin, input);
+  List MyList(input);
+  MyList.Reverse();
+  MyList.Print();
 
   return 0;
 }
