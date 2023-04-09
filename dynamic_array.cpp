@@ -65,7 +65,7 @@ T Vector<T>::PopBack() {
   }
   size_ -= 1;
   T value = array_[size_];
-  if (size_ = capacity_ / 2) {
+  if (capacity_ == size_ * 2) {
     capacity_ = capacity_ / 2;
     Resize(capacity_);
   }
