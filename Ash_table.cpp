@@ -13,7 +13,6 @@ class AshTable {
   int capacity_;
   int size_;
   std::vector<std::vector<int>> table_;
-  void Resize(int new_capacity);
 };
 
 AshTable::AshTable() {
@@ -24,23 +23,7 @@ AshTable::AshTable() {
 
 AshTable::~AshTable() {}
 
-void AshTable::Resize(int new_capacity) {
-  std::vector<std::vector<int>> new_table(new_capacity);
-  for (int i = 0; i < capacity_; i++) {
-    for (unsigned long int j = 0; j < table_[i].size(); j++) {
-      int key = table_[i][j];
-      int new_index = key % new_capacity;
-      new_table[new_index].push_back(key);
-    }
-  }
-  table_ = new_table;
-  capacity_ = new_capacity;
-}
-
 void AshTable::AddValue(int key) {
-  if (size_ == capacity_) {
-    Resize(capacity_ * 2);
-  }
   int new_index = key % capacity_;
   for (unsigned long int i = 0; i < table_[new_index].size(); i++) {
     if (table_[new_index][i] == key) {
