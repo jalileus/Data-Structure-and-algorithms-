@@ -6,8 +6,6 @@ class Fibonacci {
   ~Fibonacci();
   unsigned long long Fib(unsigned long long n);
   void Matrix_Power(unsigned long long F[2][2], unsigned long long n);
-  void Matrix_Multiplication(unsigned long long M[2][2],
-                             unsigned long long F[2][2]);
   unsigned long long F[2][2] = {{1, 1}, {1, 0}};
   unsigned long long M[2][2] = {{1, 1}, {1, 0}};
 
