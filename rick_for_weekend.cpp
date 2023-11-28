@@ -6,54 +6,69 @@
 template <class T>
 class Graph {
  public:
-  Graph(T n);
+  Graph(T n, T target, T number_of_flights);
   ~Graph();
-  void CreatUniverse(T world_1, T world_2, T lemonade_value);
-  T Dikjstra(T source, T conference_target, T flights);
+  void CreatUniverse(T first_world, T second_world, T lemonade_value);
+  void Relax(T u);
+  T Dikjstra(T source);
 
  private:
   T worlds_;
   std::vector<std::vector<std::pair<T, T>>> adj_;
+  std::priority_queue<std::pair<T, T>, std::vector<std::pair<T, T>>,
+                      std::greater<std::pair<T, T>>>
+      pq_;
+  std::vector<T> distance_;
+  std::vector<T> path_;
+  T conference_target_;
+  T flights_;
 };
 
 template <class T>
-Graph<T>::Graph(T n) : worlds_(n), adj_(n) {}
+Graph<T>::Graph(T n, T target, T number_of_flights)
+    : worlds_(n),
+      adj_(n),
+      conference_target_(target),
+      flights_(number_of_flights) {
+  distance_.resize(worlds_, std::numeric_limits<T>::max());
+  path_.resize(worlds_, 0);
+}
 
 template <class T>
 Graph<T>::~Graph() {}
 
 template <class T>
-void Graph<T>::CreatUniverse(T world_1, T world_2, T lemonade_value) {
-  adj_[world_1].push_back({world_2, lemonade_value});
+void Graph<T>::CreatUniverse(T first_world, T second_world, T lemonade_value) {
+  adj_[first_world].push_back({second_world, lemonade_value});
 }
 
 template <class T>
-T Graph<T>::Dikjstra(T source, T conference_target, T flights) {
-  std::vector<T> path(worlds_, 0);
-  path[source] = 0;
-  std::vector<T> distance(worlds_, std::numeric_limits<T>::max());
-  distance[source] = 0;
-  std::priority_queue<std::pair<T, T>, std::vector<std::pair<T, T>>,
-                      std::greater<std::pair<T, T>>>
-      pq;
-  pq.push({0, source});
-  while (!pq.empty()) {
-    T u = pq.top().second;
-    pq.pop();
-    for (const auto& neighbor : adj_[u]) {
-      T v = neighbor.first;
-      T weight = neighbor.second;
-      if (distance[u] != std::numeric_limits<T>::max() &&
-          distance[u] + weight < distance[v] &&
-          ((path[u] + 1) < flights || v == conference_target)) {
-        distance[v] = distance[u] + weight;
-        pq.push({distance[v], v});
-        path[v] = path[u] + 1;
-      }
+void Graph<T>::Relax(T u) {
+  for (const auto& neighbor : adj_[u]) {
+    T v = neighbor.first;
+    T weight = neighbor.second;
+    if (distance_[u] != std::numeric_limits<T>::max() &&
+        distance_[u] + weight < distance_[v] &&
+        ((path_[u] + 1) < flights_ || v == conference_target_)) {
+      distance_[v] = distance_[u] + weight;
+      pq_.push({distance_[v], v});
+      path_[v] = path_[u] + 1;
     }
   }
-  if (path[conference_target] != 0) {
-    return distance[conference_target];
+}
+
+template <class T>
+T Graph<T>::Dikjstra(T source) {
+  path_[source] = 0;
+  distance_[source] = 0;
+  pq_.push({0, source});
+  while (!pq_.empty()) {
+    T u = pq_.top().second;
+    pq_.pop();
+    Relax(u);
+  }
+  if (path_[conference_target_] != 0) {
+    return distance_[conference_target_];
   }
   return -1;
 }
@@ -63,17 +78,16 @@ int main() {
   std::cin >> worlds >> teleportations >> flights >> rick_location >>
       conference_location;
   int64_t size = worlds + 1;
-  Graph<int64_t> my_graph(size);
+  Graph<int64_t> my_graph(size, conference_location, flights);
   for (int64_t i = 0; i < teleportations; i++) {
-    int64_t universe_1, universe_2, lemonade;
-    std::cin >> universe_1 >> universe_2 >> lemonade;
-    my_graph.CreatUniverse(universe_1, universe_2, lemonade);
+    int64_t first_universe, second_universe, lemonade;
+    std::cin >> first_universe >> second_universe >> lemonade;
+    my_graph.CreatUniverse(first_universe, second_universe, lemonade);
   }
   if (conference_location == rick_location) {
     std::cout << 0 << std::endl;
     return 0;
   }
-  std::cout << my_graph.Dikjstra(rick_location, conference_location, flights)
-            << std::endl;
+  std::cout << my_graph.Dikjstra(rick_location) << std::endl;
   return 0;
 }
