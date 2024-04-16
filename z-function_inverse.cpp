@@ -27,19 +27,29 @@ std::string PrefixToString(const std::vector<int>& prefix, std::string& res) {
   return res;
 }
 
-int main() {
-  std::vector<int> z_func;
-  std::string values;
-  std::getline(std::cin, values);
+std::vector<int> InitializeVector(const std::string& values) {
+  std::vector<int> z_func_vector;
   std::stringstream c(values);
   int num;
   while (c >> num) {
-    z_func.push_back(num);
+    z_func_vector.push_back(num);
   }
+  return z_func_vector;
+}
+
+std::string DoTransform(const std::vector<int>& z_func) {
   char start_char = 'a';
   std::string start_string(z_func.size(), start_char);
   std::vector<int> prefix = GetPrefix(z_func);
   std::string res = PrefixToString(prefix, start_string);
+  return res;
+}
+
+int main() {
+  std::string values;
+  std::getline(std::cin, values);
+  std::vector<int> z_func = InitializeVector(values);
+  std::string res = DoTransform(z_func);
   std::cout << res << std::endl;
   return 0;
 }
