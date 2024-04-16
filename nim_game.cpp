@@ -16,7 +16,7 @@ int CalculateMex(std::vector<int> set) {
   return mex;
 }
 
-int CalculateGrundy(int heap_size, std::vector<int> removals) {
+int CalculateGrundy(int heap_size, const std::vector<int>& removals) {
   if (heap_size == 0) {
     return 0;
   }
@@ -34,22 +34,9 @@ int CalculateGrundy(int heap_size, std::vector<int> removals) {
   return grundy;
 }
 
-int main() {
-  int k, q;
-
-  std::cin >> k;
-
-  std::vector<int> removals(k);
-
-  for (int i = 0; i < k; i++) {
-    std::cin >> removals[i];
-  }
-
-  std::cin >> q;
-
-  std::vector<int> res(q);
-
-  for (int i = 0; i < q; i++) {
+std::vector<int> GetResult(const std::vector<int>& removals, int num_pos) {
+  std::vector<int> res(num_pos);
+  for (int i = 0; i < num_pos; i++) {
     int heaps_num;
     int total_grundy = 0;
     std::cin >> heaps_num;
@@ -60,7 +47,19 @@ int main() {
     }
     res[i] = total_grundy;
   }
-  for (unsigned int i = 0; i < res.size(); i++) {
+  return res;
+}
+
+int main() {
+  int size_removals, num_pos;
+  std::cin >> size_removals;
+  std::vector<int> removals(size_removals);
+  for (int i = 0; i < size_removals; i++) {
+    std::cin >> removals[i];
+  }
+  std::cin >> num_pos;
+  std::vector<int> res = GetResult(removals, num_pos);
+  for (unsigned i = 0; i < res.size(); i++) {
     if (res[i] == 0) {
       std::cout << "L";
     } else {
