@@ -1,3 +1,31 @@
+/*
+Time limit	1 second
+Memory limit	256Mb
+Input	standard input or input.txt
+Output	standard output or output.txt
+
+problem : 
+In this problem you need to find the k-order statistic (k-order by non-decreasing) of the numerical sequence A, the elements of which are given as follows:
+A[i] = (A[i-1] * 123 + A[I-2] * 45) % (10^7 + 4321)
+
+Input format
+You are given n, k, A0, A1(1 ≤ k ≤ n ≤ 107, 0 ≤ Ai < 107 + 4321) —the number of numbers in the number sequence, k from the condition and the first two numbers of the number sequence.
+
+Output format
+Output k-order statistic.
+
+Sample 1
+Input	          Output
+2 2 100 1000     1000
+
+Sample 2
+Input	          Output
+10 5 1 2        321287
+
+Notes :
+To get double the score for the problem, you need to write an algorithm that guarantees finding the kth ordinal for O(n) in the worst case.
+*/
+
 #include <algorithm>
 #include <iostream>
 
