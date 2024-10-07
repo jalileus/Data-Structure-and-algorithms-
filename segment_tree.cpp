@@ -1,3 +1,27 @@
+/*
+Time limit	0.5 seconds
+Memory limit	256.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+The Ice King has erected N cozy ice houses for his loyal subjects, the Gunters. Each of these houses has the same capacity M. 
+The Ice King, the great guardian of the ice, successively receives his Gunters, trying to place them in huts with numbers from l to r givenx Gunters. He has to determine for 
+O(logn) whether he can successfully place the specified number of Gunters.
+
+Input format
+The first line contains the number N-the number of igloos (1≤N≤50,000).
+The second line indicates the initial number of Guntersin the huts, (in the example, 2 Guntersalready occupy the first and last huts).
+The third line specifies the capacity of the lodges.
+The fourth line contains the number of attempts of the Ice King.
+The following lines represent the queries in the form: the number of the starting igloo, the number of the ending igloo, the value of  x and the number of Gunters to be settled.
+
+Output format
+It is necessary to deduce the numbers of attempts that were unsuccessful due to lack of available seats in the lodges.
+
+# sorry there is no input and output samples for this task.
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <limits>
