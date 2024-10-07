@@ -1,3 +1,31 @@
+/*
+Time limit	1 second
+Memory limit	64.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+Create a structure "Node" that has a value and a pointer to the next node. Using the structure, create
+a class "List" initialized with input data, reverse the linked list and output its contents.
+
+Implementation without loops +1 score
+
+Input format
+Given a sequence with characters.
+
+Output format
+Reversed sequence.
+
+Sample:
+Input:
+ka 1 b 2 c 3
+Output:
+3 c 2 b 1 ak
+
+Notes:
+The class List contains only one field (private) - Node* root/head (address of the first element of the list). Hint: use getline() to read the input data.
+*/
+
 #include <iostream>
 #include <string>
 
