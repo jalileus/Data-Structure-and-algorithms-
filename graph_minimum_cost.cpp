@@ -1,3 +1,45 @@
+/*
+Time limit	1 second
+Memory limit	256.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+Rick needs to get to an inter-universe conference. He pays for each teleportation with bottles of lemonade, 
+so he wants to spend them on travelling as little as possible (he is going to the conference after all!). 
+However, after K flights in a row, Rick gets very nauseous and goes to bed for the day. He knows all the teleportations that exist. 
+Now Rick wants to find a way (the lowest cost in lemonade bottles), given that teleportation takes no time, and the conference is 10 minutes away (so he can make no more than K flights)!
+
+Input format
+The first line contains the number of universes N, the number of existing teleportations M, the number of consecutive flights K, Rick's universe number S, 
+and the conference universe number F (2 ≤ N ≤ 300, 1 ≤ M ≤ 10^5, 1 ≤ K ≤ 300, 1 ≤ S ≤ N, 1 ≤ F ≤ N).
+Next comes M lines specifying the teleportations. The i-th line contains three natural numbers: 
+Si, Fi and Pi, where Si is the number of the universe from which the i-th teleportation leads, 
+Fi is the number of the universe to which the i-th teleportation leads, Pi is the cost of the i-th teleportation. 1 ≤ Si ≤ N, 1 ≤ Fi ≤ N, 1 ≤ Pi ≤ 10^6. 
+
+Output format
+Output one number - the minimum cost of a journey suitable for the professor. If the professor cannot get to the conference in K nights, output the number -1.
+
+Sample 1
+Input           	Output
+5 7 2 4 1          4
+1 2 6
+5 1 1
+4 1 9
+4 5 3
+4 3 2
+2 5 7
+3 5 1
+
+Sample 2
+Input           	Output
+3 3 1 1 3          -1
+1 2 4
+2 3 5
+3 1 6
+
+Notes:
+There are no teleporters leading from one universe to its own, within the scope of this journey ;)
+*/
+
 #include <iostream>
 #include <limits>
 #include <queue>
