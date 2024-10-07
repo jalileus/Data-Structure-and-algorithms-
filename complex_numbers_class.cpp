@@ -1,4 +1,6 @@
-//Second Task (complex numbers)
+/*
+implement a class complex number with operations
+*/
 #include<iostream>
 #include<cmath>
 using namespace std;
