@@ -1,3 +1,7 @@
+/*
+task : implemnt a class dynaminc array
+*/
+
 #include <iostream>
 #include <string>
 
