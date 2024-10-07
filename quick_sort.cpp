@@ -1,3 +1,32 @@
+/*
+Time limit	1 second
+Memory limit	256Mb
+Input	standard input or input.txt
+Output	standard output or output.txt
+
+problem :
+You need to use quick sorting to sort the array.
+
+Input format
+The first line contains the number N(1 ≤ N ≤ 105). Then in the second line there are N numbers, each on a new line. The numbers do not exceed 109 modulo.
+
+Output format
+Output an array sorted by non-decreasing.
+
+Sample
+Input	      Output
+5           1 2 3 4 5 
+5
+2
+3
+1
+4
+
+Notes
+To get double the score for the problem, you need to write a deterministic algorithm that works in O(N*LOG(N) time in the worst case.
+When the size of the array is less than 256 use the insertion sort algorithm with 2 optimizations (+1 point)
+*/
+
 #include <algorithm>
 #include <iostream>
 
