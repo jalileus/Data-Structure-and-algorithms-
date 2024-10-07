@@ -1,3 +1,58 @@
+/*
+Time limit	4 seconds
+Memory limit	256Mb
+Input	standard input or input.txt
+Output	standard output or output.txt
+
+problem :
+We need to implement a data structure of a set that can quickly perform the following operations:
+
+«+ N» — add a number N to the set. It is not guaranteed that N is not in the set.
+«- N» — remove number N from the set. It is not guaranteed that N is present in the set.
+«? N» — find out if N is in the set.
+
+Output format
+For each query of type 3, print YES if the answer is positive, and NO — otherwise.
+
+Sample 1:
+input:
+10
++ 0
++ 1
++ 2
+? 2
++ 2
+? 2
+- 2
+? 2
+- 0
+? 0
+output:
+YES
+YES
+NO
+NO
+
+Sample 2:
+input:
+10
++ 2
++ 0
+? 1
+- 2
+? 2
+? 2
++ 1
++ 1
+? 0
+- 0
+output:
+NO
+NO
+NO
+YES
+*/
+
 #include <iostream>
 #include <vector>
 
