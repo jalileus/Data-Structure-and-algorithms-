@@ -1,3 +1,88 @@
+/*
+Time limit: 3 seconds
+Memory limit: 256Mb
+Input: standard input or input.txt
+Output: standard output or output.txt
+
+problem :
+Dominic takes inventory (again). He is sure that the cars can and should be compared by the number of milliseconds to accelerate from zero to 100 km/h. He asks you to help him, namely, 
+your algorithm must work with a lot of Dominic's cars. You need to implement the following operations:
+
+add(i) — add a car with an acceleration of i milliseconds to the set of cars (if it's already there, then Dominic was distracted by family talk and slipped you the same car a second time);
+next(i) — find out the car with the minimum acceleration time of at least i. If the car you're looking for is missing, print -1 and tell Dominic to be more careful.
+Input format:
+The original machine set is empty. The first line of the input file contains the number n — the number of Dominic's requests (1 < n < 3 ⋅ 10^5).
+
+The next n lines contain operations. Each operation has the form:
+
++ i — add(i)
+? i — next(i)
+If the + operation comes in the input file at the beginning or after another + operation, it sets up the add(i) operation. If it comes after the query, and the result of that query was y, then the operation continues. This is to make sure Dominic makes sure you're a decent family member and haven't implemented an offline algorithm.
+
+In all queries and addition operations, the parameters lie in the range from 0 to 10^9.
+
+Output format:
+For each query, print one number — the answer to the query.
+
+Sample 1:
+Input:
+6
++ 1
++ 3
++ 3
+? 2
++ 1
+? 4
+output:
+3
+4
+
+Sample 2:
+input:
+30
++ 50
++ 29
++ 77
+? 94
+? 26
++ 41
+? 9
++ 72
+? 93
++ 12
++ 19
++ 59
++ 21
+? 2
+? 75
++ 75
++ 55
++ 52
++ 10
+? 58
++ 85
++ 49
++ 82
++ 99
+? 66
++ 58
++ 77
++ 22
++ 7
+? 36
+
+output:
+-1
+29
+29
+101
+19
+77
+59
+70
+49
+*/
+
 #include <algorithm>
 #include <iostream>
 
