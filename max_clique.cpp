@@ -1,3 +1,36 @@
+/*
+NOTE!!!: THIS CODE IMPLEMENT ## BronKerbosch ## ALGORITHM
+
+Time limit	5 seconds
+Memory limit	790.7 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+After another hard day at MIPT, you come to the dormitory. But there's trouble! Cockroaches have eaten all your food again.
+You have olny one trap to defeat this evil. So you decided to number the cockroaches starting from 0 and make a list of each cockroach's friends. Since the cockroaches are very friendly, 
+you decided to poison the largest group of cockroaches, where all cockroaches are friends with each other.
+
+Input format:
+Let N be the number of cockroaches (0 < N < 53), and given a symmetric matrix a of size N×N, where a_ij = 1 means that cockroach i is friends with cockroach j, or a_ij = 0 otherwise.
+
+Output format:
+Print the numbers of cockroaches from this group, separated by spaces, in ascending order.
+
+Sample
+Input	            Output
+5                 1 2 3
+0 1 0 0 1
+1 0 1 1 0
+0 1 0 1 0
+0 1 1 0 0
+1 0 0 0 0
+
+Notes
+It is guaranteed that there is only one friendly cockroach group of maximum size
+
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
