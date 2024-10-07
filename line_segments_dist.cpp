@@ -1,3 +1,30 @@
+/*
+Time limit	1 second
+Memory limit	64.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+Ivan fall asleep and he dreamed of the planet Pandora, where 2 river flows. These rivers are quite unusual for earth: they flow strictly from one point to another point directly in space 
+(since in Ivan’s dream the planet is not round at all).Ivan decided that he wanted to dig a tunnel between the rivers. Since he is lazy, 
+he doesn’t want to dig much. Help Ivan find out how much he will have to dig.
+
+Input format
+Four lines specify the integer coordinates of the beginning and end of the rivers. Modulo coordinates do not exceed 1000.
+
+Output format
+Print a value with 6 decimal places of accuracy
+
+Sample
+Input	       Output
+0 0 0        0.408248
+1 1 1
+0 0 1
+0 1 0
+
+*/
+
+
 #include <algorithm>
 #include <cmath>
 #include <iomanip>
