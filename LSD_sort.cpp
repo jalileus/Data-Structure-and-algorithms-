@@ -1,3 +1,43 @@
+/*
+Time limit	2 seconds
+Memory limit	256Mb
+Input	standard input or input.txt
+Output	standard output or output.txt
+problem :
+An array of non-negative 64-bit integers is given. The number of numbers is at most 106. Sort the array using LSD byte-by-byte sorting.
+
+Input format
+The first line enters the number of numbers in the array N. Then go on N lines of N numbers.
+
+Output format
+Output this array, sorted in non-decreasing order.
+
+Sample 1
+Input	        Output
+3               4
+4               7
+1000000        1000000
+7
+
+Sample 2
+Input	
+5
+9244894871689
+9521193378807
+1748929606960
+1006499032553
+3289527480072
+Output
+1006499032553
+1748929606960
+3289527480072
+9244894871689
+9521193378807
+
+Notes
+It is forbidden to include algorithm!
+*/
+
 #include <cmath>
 #include <cstring>
 #include <iostream>
