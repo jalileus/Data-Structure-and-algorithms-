@@ -1,3 +1,7 @@
+/*
+task : implement a class stack
+*/
+
 #include <iostream>
 #include <string>
 
