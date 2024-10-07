@@ -1,3 +1,40 @@
+/*
+Time limit	3 seconds
+Memory limit	256Mb
+Input	standard input or input.txt
+Output	standard output or output.txt
+
+problem :
+Leon and Matilda were about to go to the store for milk. Stansfield wants to meet them, so our friends need to do it as quickly as possible. 
+What is the minimum number of streets that at least one of the guys will walk through (either Matilda, or Leon, or both together).
+We believe that both friends need to get to the store without fail.
+
+Input format
+"The first line contains the number of vertices n (1 ≤ n ≤ 105), the number of edges m (0 ≤ m ≤ 105) and the vertex numbers leon, matilda, milk, which contain Leon, Matilda, and a milk shop, respectively.
+
+The next m lines contain the edges of the graph. Each line contains two numbers, separated by a space, if there is an edge between i and j. It is guaranteed that there are no loops and multi-edges in the graph."
+
+Output format
+One number is the number of edges.
+
+Sample 1
+Input	        Output
+3 2 1 2 3      2
+1 3
+2 3
+
+Sample 2
+Input         Output
+5 4 1 1 5      4
+1 2
+2 3
+3 4
+4 5
+
+Notes:
+The graph is connected and undirected. Vertices are numbered from 1.
+*/
+
 #include <iostream>
 #include <list>
 #include <vector>
