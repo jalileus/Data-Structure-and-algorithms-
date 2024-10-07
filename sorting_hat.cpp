@@ -1,3 +1,57 @@
+/*
+Time limit: 2 seconds  
+Memory limit: 64Mb  
+Input: standard input or input.txt  
+Output: standard output or output.txt  
+
+problem :
+Potter put on The Sorting Hat, and he was just right for Slytherin. Vladislav Hacker(c)
+
+The Sorting Hat — an extremely ancient artifact capable of figuring out from its bearer which faculty would suit him for the fullest disclosure of his character. But someone decided to enchant the hat, and now it determines the wearer's IQ level. It is up to you to implement the enchanted hat to lift the curse on the original one.
+
+You have the hat itself and a set of actions that will happen to it. There is a line of Hogwarts freshmen who want to test themselves against the hat. Possible actions:
+
+- «enqueue n» Add the intelligence level of the next freshman n (1 ≤ n ≤ 10^9) (the n value is set after the command) to the hat's internal queue. The hat must say «ok».
+- «dequeue» Remove from the hat's internal queue the intelligence level of the last student it still remembers. The hat should tell its value.
+- «front» The hat must tell the intelligence level of the last student it still remembers without forgetting it.
+- «size» The hat will tell you the intelligence level of how many students it remembers.
+- «clear» Reload the hat, it forgets everything that came before. The hat must say «ok».
+- «min» The hat must tell the level of intelligence of the most untalented freshman. At the same time, of course, not to forget him.
+
+Before executing the «front», «dequeue» and «min» operations, the hat should check if the internal queue contains at least one item. If the hat remembers zero students at the time of such queries, it should say the word «error» instead of a numerical value.
+
+Input format:
+The first line of input contains a single number M (1 ≤ M ≤ 2 ⋅ 10^5) — the number of commands. The next M lines contain one command each of those above.
+
+Output format:
+For each command, print one line — what the hat says.
+
+Sample
+**Input**:  
+9  
+enqueue 2  
+front  
+dequeue  
+size  
+dequeue  
+enqueue 1  
+enqueue 2  
+size  
+min  
+
+**Output**:  
+ok  
+2  
+2  
+0  
+error  
+ok  
+ok  
+2  
+1
+
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <stack>
