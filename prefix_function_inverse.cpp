@@ -1,3 +1,19 @@
+/*
+
+Time limit	0.08 seconds
+Memory limit	12.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem : 
+In this exercise, you need to find the string with the smallest lexicographical order constructed from the given prefix function in the alphabet a-z.
+
+Sample
+Input	          Output
+0 1 2 3 0       aaaab
+
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <sstream>
