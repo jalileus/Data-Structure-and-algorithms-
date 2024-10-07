@@ -1,3 +1,18 @@
+/*
+Time limit	1 second
+Memory limit	12.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+peoblem :
+In this exercise, you need to find the string with the smallest lexicographical order constructed from the given Z-function in the alphabet a-z.
+
+Sample
+Input	         Output
+5 3 2 1 0       aaaab
+
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <sstream>
