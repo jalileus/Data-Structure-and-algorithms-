@@ -1,3 +1,45 @@
+/*
+Time limit	3 seconds
+Memory limit	256Mb
+Input	standard input or input.txt
+Output	standard output or output.txt
+
+problem :
+Frank again receives a new order. This time, however, 
+the city plays by very strange rules: all roads in the city are one-way and connect only offices. 
+A set of offices, between any two of which a road exists, forms a neighborhood if no others can be added so that the condition is satisfied. 
+Frank wonders what is the minimum number of one-way roads that need to be built before the whole city becomes a neighborhood.
+
+Input format
+The first line contains a pair of integers n and m (1 ≤ n ≤ 105, 0 ≤ m ≤ 105) - the number of vertices and edges of the given oriented graph.
+The next m lines contain descriptions of edges, one per line. Each line contains two integers a and b (1 ≤ a, b ≤ n) - the beginning and the end of the edge.
+
+Output format
+Output one number - the number of roads you need to add to make the whole city one neighborhood.
+
+Sample 1
+Input	  Output
+2 1       1
+1 2
+
+Sample 2
+Input 	Output
+4 3       2
+1 2
+3 2
+2 4
+
+Sample 3
+Input  	Output
+5 4       2
+1 2
+3 2
+2 4
+2 5
+
+Notes:
+The numbering is from 1. Loops are allowed.
+*/
 
 #include <algorithm>
 #include <iostream>
