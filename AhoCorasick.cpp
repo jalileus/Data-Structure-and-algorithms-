@@ -1,3 +1,35 @@
+/*
+Time limit	12.5 seconds
+Memory limit	30.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+8 years after the conclusion of the war, Naruto became the Hokage of the Hidden Leaf village.
+Usually he receives a lot of messages every day, but today he received a very strange text from an unknown person.
+Nobody from the Hidden Leaf village understands the text, so he needs to decode it. To do it, 
+he needs to find the positions of all occurrences of a specific pattern of length m (m <= 5000) in the text of length n (n <= 2000000). 
+But there is something special about this pattern — the characters “?” can occur in this pattern. Each occurrence assumes that all the usual characters match the corresponding ones from the text, 
+and instead of the symbol “?”, there is an arbitrary character in the text. It is guaranteed that “?” does not occur in the text.
+
+Your task is to help Naruto find all the positions of all occurrences of this pattern. Also, 
+Naruto wants an algorithm with time complexity O(m+n+t), where t is the total number of occurrences of that pattern.
+
+Input format
+The first line contains the pattern with length m (m <= 5000).
+The second line contains the text with length n (n <= 2000000).
+
+Sample 1
+Input	                          Output
+ab??aba                           2
+ababacaba
+
+Sample 2
+Input	                          Output
+aa??bab?cbaa?                    0 13
+aabbbabbcbaabaabbbabbcbaab                               
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <queue>
