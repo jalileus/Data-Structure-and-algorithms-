@@ -1,3 +1,41 @@
+/*
+Time limit	0.008 seconds
+Memory limit	9.5 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+Yesterday, Doctor Strange came up with an interesting game about numbers and he really wants to play it with you.
+
+Doctor Strange will choose a number between 1 and n, and you need to guess what it is. Of course, you don't have the ability that Doctor Strange does, so he will give you some useful hints.
+
+If you guess it right, congratulation, you win the game.
+
+If you guess the wrong number, don't worry, Doctor Strange will tell you whether the number you chose is bigger or smaller, and you can continue guessing.
+
+BUT THERE IS A CATCH HERE.
+
+Each incorrect guess of a number, represented as x, incurs a payment of x dollars. If your funds are depleted, you will face defeat in the game.
+
+Your task is to write a program. Given n, return the minimum amount of money you need to guarantee a win regardless of what number Doctor Strange pick.
+
+Good luck !
+
+Input format
+1 <= n <=200
+
+Output format
+Output the minimum amount of money you need to guarantee a win
+
+Sample 1
+Input	Output
+  1     0
+Sample 2
+Input	Output
+  2      1
+1
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <limits>
