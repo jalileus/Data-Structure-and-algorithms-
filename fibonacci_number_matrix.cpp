@@ -1,3 +1,31 @@
+/*
+time limit : 0.05 seconds
+memory limit: 64MB
+
+problem :
+Given a number n, we need to find the Fibonacci number n.
+
+input format:
+n>=0, n <= 10000000000
+
+output format:
+output n mod 1000003
+
+Sample 1:
+input    output
+1          0
+
+Sample 2:
+input    output
+2          1
+
+
+Sample 1:
+input    output
+3          1
+
+*/
+
 #include <iostream>
 
 class Fibonacci {
