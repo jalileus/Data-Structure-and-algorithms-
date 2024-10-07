@@ -1,3 +1,41 @@
+/*
+Time limit	1 second
+Memory limit	256.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+Now Rick needs to get from the universe with the number S to the universe with the number F. 
+He knows all existing teleporters, and it would seem that there is no problem. 
+But, it's no secret that in his long life, Rick has had a lot of fights with a lot of people. He knows from personal experience that when teleporting, there is a chance of being made to answer for his words.
+If Rick knows the probabilities of being pinned against the wall on all existing teleportations, help him calculate the minimum probability that he will still get in trouble.
+
+Input format
+The first line contains the number of universes N (2 ≤ N ≤ 100), the number of existing teleportations M (1 ≤ M ≤ N ⋅ (N - 1) / 2), the starting universe S (1 ≤ S ≤ N) and the final universe F (1 ≤ F ≤ N).
+Next, M lines describe teleportations in the format Si, Fi, Pi, 
+where Si and Fi are the numbers of universes that the i-th teleportation connects (teleports are bidirectional, 1 ≤ Si, Fi ≤ N), Pi is the probability of being beaten on the i-th teleportation in percent (0 ≤ Pi ≤ 100).
+
+Output format
+The probability of being beaten to within 10^(-2)
+
+Sample
+Input	        Output
+5 7 1 3        0.36
+1 2 20
+3 4 10
+1 5 37
+1 3 50
+2 3 20
+4 5 92
+1 4 67
+
+Notes:
+In this case it is again assumed that there are no teleports from a universe to the same universe, 
+and no two teleports are identical (i.e. with the same initial and final universes). It is guaranteed that the path between S and F always exists.
+
+
+*/
+
 #include <iomanip>
 #include <iostream>
 #include <limits>
