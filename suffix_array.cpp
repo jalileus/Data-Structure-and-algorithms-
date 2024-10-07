@@ -1,3 +1,23 @@
+/*
+Time limit	0.057 seconds
+Memory limit	2.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+Given a string of length n. Find the total number of its distinct substrings. Use a suffix array. Constructing a suffix array takes O(nlogn). 
+Calculate the number of distinct substrings in O(n)
+
+Input format
+A string of length <= 40000
+
+Sample
+Input	                              Output
+wsmmumrvpvvusnuxzomuouyyvxv          362
+
+*/
+
+
 #include <algorithm>
 #include <iostream>
 #include <string>
