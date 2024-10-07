@@ -1,3 +1,44 @@
+/*
+Time limit	1 second
+Memory limit	64.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+Ivan fell asleep and dreamed of the planet Pandora, where he was fighting aliens. 
+Ivan and some of his allies created a safe zone inside a fortress, its walls forming a strict boundary. Unfortunately, 
+Ivan couldn't contact any of his allies, and he wasn't sure if all of them were inside the fortress or not. However, he knew the location of all his allies.
+
+Your task is to check whether all of Ivan's allies are positioned strictly inside the fortress. This means that any ally should be strictly inside the fortress. 
+"Strictly" means that an ally cannot lie on the side of the fortress. 
+Ivan built the fortress as a strictly convex polygon, and all coordinates of the allies create an arbitrary polygon without any self-intersections or self-touches. 
+The coordinates of both figures are given in clockwise order. No three consecutive allies or coordinates of the fortress are located on the same straight line.
+
+Input format
+The first line contains the only integer ( n ) - the number of vertices of the fortress. Then ( n ) lines contain pairs of integers - coordinates of each vertex (coordinates can vary from (-10^9) to (10^9)). 
+The vertices are given in clockwise order.
+
+The next line contains a single integer ( m ) - the number of allies. Then the following ( m ) lines contain pairs of integers - coordinates of each ally (coordinates can vary from (-10^9) to (10^9)). 
+The allies are given in clockwise order.
+
+Output format
+Print on the only line the answer to the problem — if all allies are strictly inside fortress, print "YES", otherwise print "NO"
+
+Sample:
+Input:
+5
+1 2
+4 2
+3 -3
+-2 -2
+-2 1
+4
+0 1
+1 2
+4 1
+2 -1
+Output:
+NO
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
