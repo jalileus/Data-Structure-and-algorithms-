@@ -1,3 +1,43 @@
+/* 
+Time limit	0.055 seconds
+Memory limit	3.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem : 
+We already played Nim game as follows:
+
+The starting position has some heaps, all containing a number of beads (not necessarily equal).
+
+The players take turns chosing a heap and then remove a positive number of beads from it.
+
+If the first player not able to make a move, loses.
+
+But unfortunately, the game becomes boring since we know that we just need to Xor the number of beads
+in the heaps in the current position and if the xor-sum is 0, you will lose. Luckily for you guys, we came up with a new version with an additional rule:
+
+Each player is now only allowed to remove a number of beads in some predefined set S
+It means that if we have S,S = {2,5} each player is only allowed to remove or 2 or 5 beads.
+
+Your job is to write a program that determines if a position is a losing or a winning position.
+
+Input format :
+The first line contains a number k - the size of S (1 <= k <= 100) followed by k numbers xi (1 <= xi <= 10000) describing S. The second line is q - the number of positions to calculate the result. 
+The next q lines each contain a number j (1 <= j <= 100) describing the number of heaps and j numbers yi (0 <= yi <= 10000) describing the number of beads in the heaps.
+
+Output format
+If the position is a winning position, print "W" If it's losing position, print "L"
+
+Sample
+Input	       Output
+2 2 5         LWW 
+3
+2 5 12
+3 2 4 7
+4 2 3 7 12
+
+*/
+
 #include <iostream>
 #include <unordered_map>
 #include <vector>
