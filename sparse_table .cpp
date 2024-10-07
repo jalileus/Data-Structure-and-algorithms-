@@ -1,3 +1,34 @@
+/*
+Time limit	3 seconds
+Memory limit	256.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+Shrek, tired of his routine, decided to do something unusual. He began to explore the mysterious ranges in his sequence of integers. To do this, he used the magical data structure Sparse Table. 
+Shrek was now able to find the second ordinal statistics for each given range in O(1) of processing time. 
+The data structure preparation time was O(nlogn), which was quite acceptable for Shrek.
+
+Input format
+N is the size of the sequence, 
+M is the number of ranges A sequence of N integers M pairs of numbers - range boundaries (guaranteed to contain at least 2 elements)
+
+Output format
+For each range, the magic number - the second ordinal statistic - is output, one number per row.
+
+Sample:
+Input:
+10 3
+1 2 3 4 5 6 7 8 9 10
+1 2
+1 10
+2 7
+Output:
+2
+2
+3
+*/
+
 #include <algorithm>
 #include <cmath>
 #include <iostream>
