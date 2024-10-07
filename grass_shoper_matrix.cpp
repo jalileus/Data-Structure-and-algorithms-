@@ -1,3 +1,31 @@
+/*
+Time limit	0.05 seconds
+Memory limit	64.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+The grasshopper can jump forward. He can make jumps from 1 to 5. It is necessary to find how many ways the grasshopper can get to the cell with number n, if it starts from the cell with number 1.
+
+Input format
+Given number n is the number of the cell the grasshopper wants to reach. (n > 0 and n <= 2^64-1).
+
+Output format
+The answer modulo 1000003.
+
+Sample 1
+Input	   Output
+1          1 
+
+Sample 2
+Input    Output
+2          2
+
+Sample 3
+Input	    Output
+3          2
+*/
+
 #include <iostream>
 
 uint64_t T[5] = {8, 4, 2, 1, 1};
