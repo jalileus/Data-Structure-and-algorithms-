@@ -1,3 +1,36 @@
+/*
+Time limit	2.5 seconds
+Memory limit	256.0 MB
+Input	stdin or input.txt
+Output	stdout or output.txt
+
+problem :
+Rick sends Morty on a trip through N universes. He has a list of all existing unidirectional teleporters. 
+To make sure Morty doesn't get lost, Rick needs to find out which universes have paths between them and which ones don't. Help him do it!!!
+
+Input format
+The first line contains the number of universes N (1 ≤ N ≤ 1 000). 
+The next N rows are of length N, consist of zeros and ones and define the adjacency matrix of universes. 
+A unit in the i-th row of the j-th column denotes a teleport from the i-th universe to the j-th universe.
+
+Output format
+Output a matrix where one in the i-th row of the j-th column denotes the existence of a path from the i-th universe to the j-th universe and zero denotes its absence.
+
+Sample:
+Input:
+3
+010
+001
+000
+Output:
+011
+001
+000
+
+Notes:
+A graph without loops.
+*/
+
 #include <iostream>
 #include <vector>
 
