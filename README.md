@@ -1,5 +1,5 @@
 # Data-Structure-and-algorithms
-this repo contains my solutions for a challenging tasks of of # Data-Structure-and-algorithms course at MIPT university 
+this repo contains my solutions for a challenging tasks of # Data-Structure-and-algorithms course at MIPT university 
 
 `note: all tasks have been approved by some of MIPT Teachers`
 
